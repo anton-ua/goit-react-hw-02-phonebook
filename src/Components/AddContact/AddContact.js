@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 const InitialState = { name: "", number: "" };
@@ -12,7 +12,7 @@ export default class AddContact extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     if (!this.state.name) {
@@ -34,7 +34,7 @@ export default class AddContact extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <h2>Phonebook</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -56,11 +56,11 @@ export default class AddContact extends Component {
           </label>
           <button type="submit">Add Contact</button>
         </form>
-      </Fragment>
+      </>
     );
   }
 }
 
 AddContact.propTypes = {
-  onAddContact: PropTypes.func.isRequired
+  onAddContact: PropTypes.func.isRequired,
 };

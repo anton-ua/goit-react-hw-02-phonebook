@@ -12,7 +12,7 @@ export default class Filter extends Component {
     return (
       <input
         placeholder="Find contact"
-        value={this.props.filter}
+        value={this.props.value}
         onChange={this.handleFilter}
       />
     );
@@ -21,5 +21,5 @@ export default class Filter extends Component {
 
 Filter.propTypes = {
   filterValue: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
 };
